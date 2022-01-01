@@ -78,3 +78,5 @@ fn main() {
 }
 ```
 It is not better than cpp, but **hipper** than cpp.
+# HOW TO USE
+Just copy the `core.rs` to your code!
