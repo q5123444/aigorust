@@ -3,7 +3,7 @@ AigoRust is an useful ***solving tool*** for **algorithm problems**.
 
 # Vector<T> and vector![]
 
-Use `vector![]` to make `Vector<T>`. `Vector<T>` is inherited from `Vec<T>`
+Use `vector![]` to make `Vector<T>`. `Vector<T>` is inherited from `Vec<T>`, so it is slower than `Vec<T>`. But it doesn't matter.
 ```rust
 fn main() {
     let a = vector![1, 2, 3]; // new feature : Vector<T> and vector![...]
