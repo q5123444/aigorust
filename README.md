@@ -1,5 +1,5 @@
 # aigorust
-AigoRust is useful ***solving tool*** for **algorithm problem**.
+AigoRust is an useful ***solving tool*** for **algorithm problems**.
 
 ```rust
 fn main() {
