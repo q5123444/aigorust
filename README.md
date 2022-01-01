@@ -1,6 +1,9 @@
 # aigorust
 AigoRust is an useful ***solving tool*** for **algorithm problems**.
 
+# Vector<T> and vector![]
+
+Use `vector![]` to make `Vector<T>`. `Vector<T>` is inherited from `Vec<T>`
 ```rust
 fn main() {
     let a = vector![1, 2, 3]; // new feature : Vector<T> and vector![...]
@@ -11,11 +14,15 @@ fn main() {
                            .collect();
     let d : i32 = c.iter().sum();
     println!("{}, {}", &c, d); // [1, 4, 9], 14
-    
+```
+Index doesn't need to be `usize`. It's comfortable. Yield run-time overhead and get convenience.
+```rust
     let mut a = vector![false;5]; // [false, false, true, false, false]
     a[2i16 /* as usize */] = true; // bye bye ~ "as usize" 
     println!("{}", &a);
-    
+```
+You make 2D or 3D vector by `vector![]`. Make easy.
+```ruct
     let (r, c) = (2i64, 3i64);
     let mut a = vector![-1.5;r;c]; // wow! 2D vector!!
     for i in 0..r {
@@ -24,7 +31,9 @@ fn main() {
         }
     }
     println!("{}", &a); // [[-1.5, -0.5, 0.5], [-0.5, 0.5, 1.5]]
-    
+```
+It's so convenient to write code that reads the input!
+```ruct
     let l = readln(); // read one line excluding trailing "\n"
     let x = readi(); // read one line and return i64
     let y = reada::<10>(); // read one line and return [i64; 10] ( not better than below readv() )
