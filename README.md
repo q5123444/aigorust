@@ -15,7 +15,7 @@ fn main() {
     let d : i32 = c.iter().sum();
     println!("{}, {}", &c, d); // [1, 4, 9], 14
 ```
-Index doesn't need to be `usize`. It's comfortable. Get convenience with **Run-Time Overhead**!
+Index number doesn't need to be `usize`. It's comfortable. Get convenience with **Run-Time Overhead**!
 ```rust
     let mut a = vector![false;5]; // [false, false, true, false, false]
     a[2i16 /* as usize */] = true; // bye bye ~ "as usize" 
