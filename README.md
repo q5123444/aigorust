@@ -30,7 +30,7 @@ You make 2D or 3D vector by `vector![]`. Make easy.
             a[i][j] += (i+j) as f64;
         }
     }
-    println!("{}", &a); // [[-1.5, -0.5, 0.5], [-0.5, 0.5, 1.5]]
+    println!("{}", &a); // [[-1.5, -0.5, 0.5], [-0.5, 0.5, 1.5]] // wow printable 2D vector!!
 ```
 It's so convenient to write code that reads the input!
 ```ruct
