@@ -49,14 +49,10 @@ fn main() {
         let mut neg : Vector<i64> = x.iter().filter(|&&x| x < 0).map(|&x| -x).collect();
         pos.sort(); pos.reverse();
         neg.sort(); neg.reverse();
-        ans += [&mut pos, &mut neg]
-            .iter_mut()
-            .map(|v| {
-                v.sort(); v.reverse();
-                2*v.iter()
-                   .step_by(k as usize)
-                   .sum::<i64>()
-            }).sum::<i64>();
+        ans += [&pos, &neg]
+            .iter()
+            .map(|v| 2*v.iter().step_by(k as usize).sum::<i64>())
+            .sum::<i64>();
         ans -= max(pos.first().unwrap_or(&0), neg.first().unwrap_or(&0));
         println!("{}", ans);
     }
