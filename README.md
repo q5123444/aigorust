@@ -1,5 +1,5 @@
 # aigorust
-AigoRust is useful *solving tool* for **algorithm problem**.
+AigoRust is useful ***solving tool*** for **algorithm problem**.
 
 ```rust
 fn main() {
@@ -59,3 +59,4 @@ fn main() {
     }
 }
 ```
+It is not better than cpp, but **hipper** than cpp.
