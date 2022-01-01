@@ -58,6 +58,7 @@ impl<T> std::iter::FromIterator<T> for Vector<T> {
     }
 }
 macro_rules! vector {
+    () => { Vector(vec![])};
     ($($elem : expr),*) => { Vector(vec![ $($elem ,)* ]) };
     ($elem : expr ; $n : expr) => { Vector(vec!($elem;$n as usize)) };
     ($elem : expr ; $n : expr $(; $ns : expr)+) => { {
