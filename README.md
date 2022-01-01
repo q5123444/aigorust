@@ -15,7 +15,7 @@ fn main() {
     let d : i32 = c.iter().sum();
     println!("{}, {}", &c, d); // [1, 4, 9], 14
 ```
-Index doesn't need to be `usize`. It's comfortable. Yield run-time overhead and get convenience.
+Index doesn't need to be `usize`. It's comfortable. Get convenience with **Run-Time Overhead**!
 ```rust
     let mut a = vector![false;5]; // [false, false, true, false, false]
     a[2i16 /* as usize */] = true; // bye bye ~ "as usize" 
@@ -39,6 +39,16 @@ It's so convenient to write code that reads the input!
     let y = reada::<10>(); // read one line and return [i64; 10] ( not better than below readv() )
     let [a, b] = reada(); // read one line and return two variables!!
     let v = readv(); // read one line and return Vector<i64>
+}
+```
+I recommend `reada()`. It reads very well regardless of the number of variables.
+```rust
+fn main() {
+    let [a] = reada();
+    let [a, b] = reada();
+    let [a, b, c] = reada();
+    let [a, b, c, d] = reada();
+    let [a, b, c, d, e] = reada();
 }
 ```
 Features : `Vector<T>, vector![], readln(), readi(), reada(), readv()`
