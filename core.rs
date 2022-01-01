@@ -75,4 +75,13 @@ fn readln() -> String {
     String::from(line.trim())
 }
 fn readi() -> i64 { readln().parse().unwrap() }
+fn reada<const N: usize>() -> [i64; N] {
+    let mut c : [i64; N] = [0; N];
+    let ln = readln();
+    let mut iter = ln.split(" ").take(N).map(|x| x.parse::<i64>().unwrap());
+    for i in 0..N {
+        c[i] = iter.next().unwrap();
+    }
+    c
+}
 fn readv() -> Vector<i64> { readln().split(" ").map(|x| x.parse::<i64>().unwrap()).collect() }
