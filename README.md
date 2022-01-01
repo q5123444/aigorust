@@ -32,6 +32,7 @@ You make 2D or 3D or ND vector by `vector![]`. Make easy.
     }
     println!("{}", &a); // [[-1.5, -0.5, 0.5], [-0.5, 0.5, 1.5]] // wow printable 2D vector!!
 ```
+# readln(), readi(), reada(), readv()
 It's so convenient to write code that reads the input!
 ```ruct
     let l = readln(); // read one line excluding trailing "\n"
