@@ -21,7 +21,7 @@ Index number doesn't need to be `usize`. It's comfortable. Get convenience with 
     a[2i16 /* as usize */] = true; // bye bye ~ "as usize" 
     println!("{}", &a);
 ```
-You make 2D or 3D vector by `vector![]`. Make easy.
+You make 2D or 3D or ND vector by `vector![]`. Make easy.
 ```ruct
     let (r, c) = (2i64, 3i64);
     let mut a = vector![-1.5;r;c]; // wow! 2D vector!!
