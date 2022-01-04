@@ -41,7 +41,7 @@ impl<T> std::fmt::Display for Vector<T> where T : std::fmt::Display {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         write!(f, "[")?;
         let mut iter = self.iter();
-        write!(f, "{}", iter.next().unwrap());
+        write!(f, "{}", iter.next().unwrap())?;
         for i in iter {
             write!(f, ", {}", i)?;
         }
