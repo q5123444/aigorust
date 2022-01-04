@@ -18,23 +18,27 @@ impl<T> std::ops::DerefMut for Vector<T> {
         &mut self.0
     }
 }
-impl<T, I : Copy + ?Sized> std::ops::Index<I> for Vector<T> {
-    type Output = T;
-    fn index(&self, idx: I) -> &Self::Output {
-        &self.0[unsafe {
-            let index : usize = 0;
-            *(&index as *const _ as *mut I) = idx;
-            index
-        }] // UNSAFE Hurray!
+trait CastToUsize { fn cast_to_usize(self) -> usize; }
+macro_rules! impl_cast_to_usize {
+    ($($t : ty)+) => {
+        $(impl CastToUsize for $t {
+            fn cast_to_usize(self) -> usize {
+                self as usize
+            }
+        })+
     }
 }
-impl<T, I : Copy + ?Sized> std::ops::IndexMut<I> for Vector<T> {
+impl_cast_to_usize!(i8 i16 i32 i64 i128 u8 u16 u32 u64 u128);
+
+impl<T, I : CastToUsize> std::ops::Index<I> for Vector<T> {
+    type Output = T;
+    fn index(&self, idx: I) -> &Self::Output {
+        &self.0[idx.cast_to_usize()]
+    }
+}
+impl<T, I : CastToUsize> std::ops::IndexMut<I> for Vector<T> {
     fn index_mut(&mut self, idx: I) -> &mut Self::Output {
-        &mut self.0[unsafe {
-            let index : usize = 0;
-            *(&index as *const _ as *mut I) = idx;
-            index
-        }] // UNSAFE Hurray!
+        &mut self.0[idx.cast_to_usize()]
     }
 }
 impl<T> std::fmt::Display for Vector<T> where T : std::fmt::Display {
