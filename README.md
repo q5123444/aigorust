@@ -14,15 +14,19 @@ fn main() {
                            .collect();
     let d : i32 = c.iter().sum();
     println!("{}, {}", &c, d); // [1, 4, 9], 14
+}
 ```
 Index number doesn't need to be `usize`. It's comfortable. Get convenience with **Run-Time Overhead**!
 ```rust
+fn main() {
     let mut a = vector![false;5]; // [false, false, true, false, false]
     a[2i16 /* as usize */] = true; // bye bye ~ "as usize" 
     println!("{}", &a);
+}
 ```
 You make 2D or 3D or ND vector by `vector![]`. Make easy.
 ```ruct
+fn main() {
     let (r, c) = (2i64, 3i64);
     let mut a = vector![-1.5;r;c]; // wow! 2D vector!!
     for i in 0..r {
@@ -31,6 +35,17 @@ You make 2D or 3D or ND vector by `vector![]`. Make easy.
         }
     }
     println!("{}", &a); // [[-1.5, -0.5, 0.5], [-0.5, 0.5, 1.5]] // wow printable 2D vector!!
+}
+```
+You can use `Vec<T>`'s methods whose parameter is `&self` or `&mut self`.
+You can use `Vec<T>`'s methods whose parameter is `self` too! Just add `.0`.
+```rust
+fn main() {
+    let mut a = vector![1, 2, 3];
+    let b : i64 = a.iter().sum(); // iter(&self)
+    let c : Vector<i64> = a.0.into_iter().map(|x| x+1).collect(); // into_iter(self)
+    println!("{} {}", b, c); // 6 [2, 3, 4]
+}
 ```
 # readln(), readi(), reada(), readv()
 It's so convenient to write code that reads the input!
