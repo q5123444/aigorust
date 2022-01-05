@@ -37,8 +37,8 @@ fn main() {
     println!("{}", &a); // [[-1.5, -0.5, 0.5], [-0.5, 0.5, 1.5]] // wow printable 2D vector!!
 }
 ```
-You can use `Vec<T>`'s methods whose parameter is `&self` or `&mut self`. <br>
-You can use `Vec<T>`'s methods whose parameter is `self` too! Just add `.0`.
+You can use `Vec<T>`'s methods whose parameter is `&self` or `&mut self` <br>
+You can use `Vec<T>`'s methods whose parameter is `self` too! Just add `.0`
 ```rust
 fn main() {
     let mut a = vector![1, 2, 3];
