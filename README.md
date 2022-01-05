@@ -19,9 +19,9 @@ fn main() {
 Index number doesn't need to be `usize`. It's comfortable. Get convenience with **Run-Time Overhead**!
 ```rust
 fn main() {
-    let mut a = vector![false;5]; // [false, false, true, false, false]
+    let mut a = vector![false;5];
     a[2i16 /* as usize */] = true; // bye bye ~ "as usize" 
-    println!("{}", &a);
+    println!("{}", &a); // [false, false, true, false, false]
 }
 ```
 You make 2D or 3D or ND vector by `vector![]`. Make easy.
