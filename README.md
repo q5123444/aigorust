@@ -1,4 +1,4 @@
-# AIgorust
+# AIgoRust
 AIgoRust is an useful ***solving tool*** for **algorithm problems**.
 
 # Vector<T> and vector![]
