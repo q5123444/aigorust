@@ -25,7 +25,7 @@ fn main() {
 }
 ```
 You make 2D or 3D or ND vector by `vector![]`. Make easy.
-```ruct
+```rust
 fn main() {
     let (r, c) = (2i64, 3i64);
     let mut a = vector![-1.5;r;c]; // wow! 2D vector!!
@@ -52,7 +52,8 @@ fn main() {
 ```
 # readln(), readi(), reada(), readv()
 It's so convenient to write code that reads the input!
-```ruct
+```rust
+fn main() {
     let l = readln(); // read one line excluding trailing "\n"
     let x = readi(); // read one line and return i64
     let y = reada::<10>(); // read one line and return [i64; 10] ( not better than below readv() )
