@@ -38,12 +38,16 @@ fn main() {
 }
 ```
 You can use `Vec<T>`'s methods whose parameter is `&self` or `&mut self` <br>
-You can use `Vec<T>`'s methods whose parameter is `self` too! Just add `.0`
+You can use `Vec<T>`'s methods whose parameter is `self` too! Just add `.into_inner()`
 ```rust
 fn main() {
     let mut a = vector![1, 2, 3];
     let b : i64 = a.iter().sum(); // iter(&self)
-    let c : Vector<i64> = a.0.into_iter().map(|x| x+1).collect(); // into_iter(self)
+    let c : Vector<i64> = a.
+        into_inner()
+        .into_iter()
+        .map(|x| x+1)
+        .collect();
     println!("{} {}", b, c); // 6 [2, 3, 4]
 }
 ```
