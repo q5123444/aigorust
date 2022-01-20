@@ -5,6 +5,9 @@ impl<T> Vector<T> {
     fn new() -> Self {
         Vector(Vec::<T>::new())
     }
+    fn into_inner(self) -> Vec<T> {
+        self.0
+    }
 }
 // use std::ops::{Deref, DerefMut, Index, IndexMut};
 impl<T> std::ops::Deref for Vector<T> {
