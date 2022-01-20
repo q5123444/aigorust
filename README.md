@@ -43,8 +43,7 @@ You can use `Vec<T>`'s methods whose parameter is `self` too! Just add `.into_in
 fn main() {
     let mut a = vector![1, 2, 3];
     let b : i64 = a.iter().sum(); // iter(&self)
-    let c : Vector<i64> = a.
-        into_inner()
+    let c : Vector<i64> = a.into_inner()
         .into_iter()
         .map(|x| x+1)
         .collect();
